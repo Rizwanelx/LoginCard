@@ -1,0 +1,92 @@
+<mat-card class="mat-card">
+  <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">Login</button>
+  <mat-menu #menu="matMenu">
+    <button  mat-menu-item (click)="onAdmin()">Admin Login>></button>
+    <button  mat-menu-item (click)="onPublic()">Public Login>></button>
+  </mat-menu>
+
+</mat-card>
+<div *ngIf="isAdmin">
+<mat-card>
+  <mat-card-title>Admin Login</mat-card-title>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Email" value="E-mail">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Password" value="*****">
+  </mat-form-field>
+</form>
+  <button mat-raised-button color="primary" >Login</button>
+  <div class="newuser">
+    <p>New User<button mat-raised-button color="accent"  (click)="onAdminSignUp()">Sign Up</button></p>
+  </div>
+</mat-card>
+</div>
+
+
+<div *ngIf="isPublic">
+  <mat-card>
+    <mat-card-title>Public Login</mat-card-title>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" value="E-mail">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" value="*****">
+      </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary">Login</button>
+    <div class="newuser">
+      <p>New User   <button mat-raised-button color="accent"  (click)="onPublicSignUp()">Sign Up</button></p>
+    </div>
+  </mat-card>
+</div>
+
+
+<div *ngIf="isAdminSignUp">
+  <mat-card>
+    <mat-card-title>Admin Sign Up</mat-card-title>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Name" value="Name">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" value="E-mail">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" value="*****">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Phone No" value="Phone No">
+      </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary">Submit</button>
+  </mat-card>
+</div>
+
+
+<div *ngIf="isPublicSignUp">
+  <mat-card>
+    <mat-card-title>Public Sign Up</mat-card-title>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Name" value="Name">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" value="E-mail">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" value="*****">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Phone No" value="Phone No">
+      </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary">submit</button>
+  </mat-card>
+</div>
+
+
